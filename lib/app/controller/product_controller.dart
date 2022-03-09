@@ -13,13 +13,13 @@ class ProductController extends GetxController {
   }
 
   void fetchProducts() async {
-    try{
+    try {
       isLoading(true);
       var products = await RemoteServices.fetchProducts();
       if(products != []){
         productList.value = products;
       }
-    }finally{
+    }finally {
       isLoading(false);
     }
   }
